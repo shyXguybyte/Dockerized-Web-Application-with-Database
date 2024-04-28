@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/templates/media/ImageHandler.png">
+    <title>Student Data</title>
+    <style>
+        h1 {
+            color: #dfba41;
+            text-align: center;
+            font-style: italic;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            color: #dfba41;
+            width: 800px;
+            height: 450px;
+            margin: 0 auto;
+            border: 2px solid #dfba41;
+            background-color: #fff3dd;
+            border-collapse: collapse;
+            < !-- add this line for improved table styling -->
+        }
+
+        td {
+            border: 1px solid #dfba41;
+            padding: 10px;
+        }
+
+        a {
+            font-size: 30px;
+            color: #dfba41;
+            padding: 35px;
+            display: block;
+            text-align: center;
+        }
+
+        a:hover {
+            color: #ffe225e1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Student Data</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>FIRST_NAME</th>
+                <th>SECOND_NAME</th>
+                <th>CGPA</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Link back to the form -->
+    <a href="{{ url_for('form') }}" target="_self">Back</a>
+
+</body>
+
+</html>

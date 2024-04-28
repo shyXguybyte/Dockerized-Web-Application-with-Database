@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FillTheForm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ded6be;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .container {
+            width: 60%;
+            margin: 120px auto;
+            background-color: #fff3dd;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Heading styles */
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #dfba41;
+        }
+
+        /* Form input styles */
+        .form-input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #dfba41;
+            border-radius: 4px;
+            box-sizing: border-box;
+
+        }
+
+        .form-input:focus {
+            border: 2px solid #dfba41;
+        }
+
+
+        .form-submit {
+            background-color: #dfba41;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        label {
+            color: #dfba41;
+        }
+
+        .form-submit:hover {
+            background-color: #ffe225c0;
+        }
+
+        /* Link styles */
+        .data-link {
+            font-size: 30px;
+            color: #dfba41;
+            padding: 30px;
+            display: block;
+            text-align: center;
+            border: 1px solid transparent;
+            border-color: white;
+            transition: border-color 0.2s ease-in-out;
+
+
+        }
+
+        .data-link:hover {
+            color: #ffe225e1;
+
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                width: 80%;
+            }
+
+
+            label,
+            .form-input,
+            .form-submit,
+            {
+            font-size: 14px;
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Insert Data</h2>
+
+        <form action="/submit_form" method="post">
+            <div>
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name" class="form-input">
+            </div>
+
+            <div>
+                <label for="second_name">Second Name:</label>
+                <input type="text" id="second_name" name="second_name" class="form-input">
+            </div>
+
+            <div>
+                <label for="id">ID:</label>
+                <input type="text" id="id" name="id" class="form-input">
+            </div>
+
+            <div>
+                <label for="cgpa">CGPA:</label>
+                <input type="text" id="cgpa" name="cgpa" class="form-input">
+            </div>
+
+            <div>
+                <input type="submit" value="Submit" class="form-submit">
+            </div>
+        </form>
+
+        <a href="{{ url_for('index') }}" target="_self" class="data-link">Display Data</a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+version: '3'
+services:
+  web:
+    build: ./APP
+    ports:
+      - "5050:5050"
+    depends_on:
+      - mysql
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: "1234"
+      MYSQL_DATABASE: student
+      MYSQL_USER:  MYSQL_USER
+      MYSQL_PASSWORD: "1234"
+    volumes:
+      - ./student.sql:/docker-entrypoint-initdb.d/student.sql
